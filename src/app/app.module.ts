@@ -13,6 +13,7 @@ import { PostServiceService } from './post-service.service';
 import {HttpClientModule} from '@angular/common/http';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FoundComponent } from './found/found.component';
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FoundComponent } from './found/found.component';
     MatToolbarModule,
     FormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     PostServiceService

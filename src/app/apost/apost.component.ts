@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostServiceService } from '../post-service.service';
 import { error } from 'protractor';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-apost',
@@ -23,6 +24,7 @@ public showadd=false;
 public showerror=true;
 public seenpid=''
 public nopost=false
+public deletedpost={}
 @Output() public childevent=new EventEmitter()
   constructor(private p_service:PostServiceService,private router:Router,private activeroute:ActivatedRoute) {
 
@@ -68,6 +70,7 @@ public nopost=false
     this.showpost=false
     this.showcomment=true
     this.showadd=false
+  
     this.p_service.getComment(id).subscribe(data=>this.comments=data)
     this.newcomment=''
     this.post = this.post.filter(
@@ -101,6 +104,13 @@ this.router.navigate(['/found',id])
    {
      return sid===this.seenpid
      
+   }
+   del(pid)
+   {
+     
+    this.p_service.deletepostbyid(pid).subscribe(data=>{this.deletedpost=data;this.ngOnInit()})
+    
+    
    }
 
 }
