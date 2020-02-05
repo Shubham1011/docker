@@ -11,7 +11,7 @@
       <form #userform="ngForm">
         <div class="form-group">
           <label for="exampleInputEmail1">Technology Required</label>
-          <input type="text" required #title="ngModel" class="form-control" name="title" [(ngModel)]="apost.title" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="text" required #title="ngModel" [class.is-invalid]="title.invalid && title.touched" class="form-control" name="title" [(ngModel)]="apost.title" id="exampleInputEmail1" aria-describedby="emailHelp">
           <small id="emailHelp" class="form-text text-muted">Enter the technology above here</small>
         </div>
         <div class="form-group">
