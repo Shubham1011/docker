@@ -13,6 +13,7 @@ export class AddpostComponent implements OnInit {
   constructor(private postservice:PostServiceService,
     private router:Router) { }
   public rpost={}
+  public message=''
   public apost=new APost('hello','this is it',[],"2dddwdwdw")
 public data={}
   ngOnInit() {
@@ -21,7 +22,7 @@ public data={}
 
   }
 addpost(data){
-  this.postservice.addpost(data).subscribe(d=>this.rpost=d)
+  this.postservice.addpost(data).subscribe(d=>this.rpost=d,error=>this.message=error.statusText)
   this.router.navigate(['/post'])
 }
 

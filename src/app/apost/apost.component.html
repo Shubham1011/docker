@@ -14,6 +14,7 @@
       <h5><span class="badge badge-light ">  Posted at : {{apost.createdAt | slice:11:19}} </span></h5>
           <button class="btn btn-primary card-link" (click)="showcommentmethod(apost._id)"><h5>Know More</h5></button>{{"  "}}
           <button class="btn btn-success card-link" (click)="found(apost._id)"><h5>Candidate Found</h5></button>{{"  "}}
+          <button class="btn btn-danger card-link" (click)="del(apost._id)"><h5>Delete</h5></button>{{"  "}}
     <button *ngIf="seen(apost._id)" class="btn btn-warning">Seen Just now</button>
         </div>
 </div>

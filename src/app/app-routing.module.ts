@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ApostComponent } from './apost/apost.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { FoundComponent } from './found/found.component';
+import { AddreactivePostComponent } from './addreactive-post/addreactive-post.component';
 
 
 const routes: Routes = [
@@ -30,9 +31,14 @@ const routes: Routes = [
     component:FoundComponent
   },
   {
+    path:'addreactiveway',
+    component:AddreactivePostComponent
+  },
+  {
     path:'**',
     component:PagenotfoundComponent
-  }
+  } 
+
 ];
 
 @NgModule({
@@ -40,4 +46,5 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingcomponents=[AddpostComponent,AboutComponent,ApostComponent,PagenotfoundComponent,FoundComponent]
+export const routingcomponents=[AddpostComponent,AboutComponent,
+  AddreactivePostComponent,ApostComponent,PagenotfoundComponent,FoundComponent]
