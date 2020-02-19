@@ -22,7 +22,7 @@
           <input formControlName="content" type="text" name="content"class="form-control" id="exampleInputPassword1">
           <small class="text-danger">Details are required !!</small>
         </div>
-        {{array}}{{'hello'}}
+        
         <div class="form-group" *ngIf="data.get('agree').value">
             <label for="email">Enter your Enterprise Id</label>
             <input formControlName="email" type="email" name="email"class="form-control" id="email">
@@ -39,6 +39,6 @@
         </div>
         <button type="submit"  class="btn btn-primary">Submit</button>
       </form>
-      <pre>{{data.value | json}}</pre>
+      
     </div>
   </div>
